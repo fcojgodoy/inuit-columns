@@ -1,0 +1,59 @@
+
+// Apply normal column gap by default.
+
+*[class^="u-columns-"],
+*[class*=" u-columns-"] {
+  column-gap: $inuit-columns-gap-normal;
+}
+
+
+// Apply simple columns on mobile by default.
+
+@if $inuit-columns-simple-column-until-mobile == true {
+    @include mq($until: mobile) {
+
+        *[class^="u-columns-"],
+        *[class*=" u-columns-"] {
+            column-count: 1 !important;
+        }
+
+    }
+}
+
+
+// Include column count helper creator mixin.
+
+@include inuit-columns-counts($inuit-columns-count-list);
+
+
+// Generate responsive helpers for each of our defined breakpoints
+
+@if (variable-exists(mq-breakpoints)) {
+    @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+        @include mq($from: $inuit-bp-name) {
+            @include inuit-columns-counts($inuit-columns-count-list, \@#{$inuit-bp-name});
+        }
+    }
+}
+
+
+// Declare gaps widths helper classes.
+
+.u-columns-gap {
+
+    &-tiny {
+        column-gap: $inuit-columns-gap-tiny;
+    }
+
+    &-small {
+        column-gap: $inuit-columns-gap-small;
+    }
+
+    &-large {
+        column-gap: $inuit-columns-gap-large;
+    }
+
+    &-huge {
+        column-gap: $inuit-columns-gap-huge;
+    }
+}

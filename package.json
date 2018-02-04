@@ -1,0 +1,21 @@
+{
+  "name": "inuit-columns",
+  "version": "1.0.0",
+  "main": "inuit-columns.scss",
+  "license": "MIT",
+  "scripts": {
+    "test": "npm run lint && mocha test/run.js",
+    "lint": "stylelint \"**/*.scss\" --syntax scss",
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "stylelint": "^8.4.0",
+    "stylelint-scss": "^2.2.0"
+  },
+  "dependencies": {
+    "sass-mq": "^3.3.2"
+  }
+}

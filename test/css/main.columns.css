@@ -1,0 +1,227 @@
+@charset "UTF-8";
+/* ========================================================================
+   #COLUMNS
+   ======================================================================== */
+/**
+ * Utility to apply multi-column for the Inuitcss framework.
+ *
+ * It generate helper clasess, e.g.:
+ * .u-columns-2
+ * .u-columns-3
+ * .u-columns-4
+ *
+ * By default, it apply half of columns count on tablets and below. You
+ * can change this below.
+ *
+ * By default, it apply simple columns until mobile. You
+ * can change this below.
+ *
+ * TODO: REVISAR DOC-COMMENTS SOBRE ESPACIADOS
+ *
+ * If we’re using Sass-MQ, automatically generate responsive helpers for each of our
+ * defined breakpoints, and give them a Responsive Suffix, e.g.:
+ *
+ * .u-columns-2@mobile
+ * .u-columns-3@tablet
+ */
+body:before {
+  background-color: #FCF8E3;
+  border-bottom: 1px solid #FBEED5;
+  border-left: 1px solid #FBEED5;
+  color: #C09853;
+  font: small-caption;
+  padding: 3px 6px;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100; }
+  @media (min-width: 20em) {
+    body:before {
+      content: "mobile ≥ 320px (20em)"; } }
+  @media (min-width: 46.25em) {
+    body:before {
+      content: "tablet ≥ 740px (46.25em)"; } }
+  @media (min-width: 61.25em) {
+    body:before {
+      content: "desktop ≥ 980px (61.25em)"; } }
+  @media (min-width: 81.25em) {
+    body:before {
+      content: "wide ≥ 1300px (81.25em)"; } }
+
+*[class^="u-columns-"],
+*[class*=" u-columns-"] {
+  column-gap: 20px; }
+
+@media (max-width: 19.99em) {
+  *[class^="u-columns-"],
+  *[class*=" u-columns-"] {
+    column-count: 1 !important; } }
+
+.u-columns-2 {
+  column-count: 2; }
+
+@media (max-width: 46.24em) {
+  .u-columns-2 {
+    column-count: 1; } }
+
+.u-columns-3 {
+  column-count: 3; }
+
+@media (max-width: 46.24em) {
+  .u-columns-3 {
+    column-count: 2; } }
+
+.u-columns-4 {
+  column-count: 4; }
+
+@media (max-width: 46.24em) {
+  .u-columns-4 {
+    column-count: 2; } }
+
+.u-columns-6 {
+  column-count: 6; }
+
+@media (max-width: 46.24em) {
+  .u-columns-6 {
+    column-count: 3; } }
+
+@media (min-width: 20em) {
+  .u-columns-2\@mobile {
+    column-count: 2; } }
+
+@media (min-width: 20em) and (max-width: 46.24em) {
+  .u-columns-2\@mobile {
+    column-count: 1; } }
+
+@media (min-width: 20em) {
+  .u-columns-3\@mobile {
+    column-count: 3; } }
+
+@media (min-width: 20em) and (max-width: 46.24em) {
+  .u-columns-3\@mobile {
+    column-count: 2; } }
+
+@media (min-width: 20em) {
+  .u-columns-4\@mobile {
+    column-count: 4; } }
+
+@media (min-width: 20em) and (max-width: 46.24em) {
+  .u-columns-4\@mobile {
+    column-count: 2; } }
+
+@media (min-width: 20em) {
+  .u-columns-6\@mobile {
+    column-count: 6; } }
+
+@media (min-width: 20em) and (max-width: 46.24em) {
+  .u-columns-6\@mobile {
+    column-count: 3; } }
+
+@media (min-width: 46.25em) {
+  .u-columns-2\@tablet {
+    column-count: 2; } }
+
+@media (min-width: 46.25em) and (max-width: 46.24em) {
+  .u-columns-2\@tablet {
+    column-count: 1; } }
+
+@media (min-width: 46.25em) {
+  .u-columns-3\@tablet {
+    column-count: 3; } }
+
+@media (min-width: 46.25em) and (max-width: 46.24em) {
+  .u-columns-3\@tablet {
+    column-count: 2; } }
+
+@media (min-width: 46.25em) {
+  .u-columns-4\@tablet {
+    column-count: 4; } }
+
+@media (min-width: 46.25em) and (max-width: 46.24em) {
+  .u-columns-4\@tablet {
+    column-count: 2; } }
+
+@media (min-width: 46.25em) {
+  .u-columns-6\@tablet {
+    column-count: 6; } }
+
+@media (min-width: 46.25em) and (max-width: 46.24em) {
+  .u-columns-6\@tablet {
+    column-count: 3; } }
+
+@media (min-width: 61.25em) {
+  .u-columns-2\@desktop {
+    column-count: 2; } }
+
+@media (min-width: 61.25em) and (max-width: 46.24em) {
+  .u-columns-2\@desktop {
+    column-count: 1; } }
+
+@media (min-width: 61.25em) {
+  .u-columns-3\@desktop {
+    column-count: 3; } }
+
+@media (min-width: 61.25em) and (max-width: 46.24em) {
+  .u-columns-3\@desktop {
+    column-count: 2; } }
+
+@media (min-width: 61.25em) {
+  .u-columns-4\@desktop {
+    column-count: 4; } }
+
+@media (min-width: 61.25em) and (max-width: 46.24em) {
+  .u-columns-4\@desktop {
+    column-count: 2; } }
+
+@media (min-width: 61.25em) {
+  .u-columns-6\@desktop {
+    column-count: 6; } }
+
+@media (min-width: 61.25em) and (max-width: 46.24em) {
+  .u-columns-6\@desktop {
+    column-count: 3; } }
+
+@media (min-width: 81.25em) {
+  .u-columns-2\@wide {
+    column-count: 2; } }
+
+@media (min-width: 81.25em) and (max-width: 46.24em) {
+  .u-columns-2\@wide {
+    column-count: 1; } }
+
+@media (min-width: 81.25em) {
+  .u-columns-3\@wide {
+    column-count: 3; } }
+
+@media (min-width: 81.25em) and (max-width: 46.24em) {
+  .u-columns-3\@wide {
+    column-count: 2; } }
+
+@media (min-width: 81.25em) {
+  .u-columns-4\@wide {
+    column-count: 4; } }
+
+@media (min-width: 81.25em) and (max-width: 46.24em) {
+  .u-columns-4\@wide {
+    column-count: 2; } }
+
+@media (min-width: 81.25em) {
+  .u-columns-6\@wide {
+    column-count: 6; } }
+
+@media (min-width: 81.25em) and (max-width: 46.24em) {
+  .u-columns-6\@wide {
+    column-count: 3; } }
+
+.u-columns-gap-tiny {
+  column-gap: 5px; }
+
+.u-columns-gap-small {
+  column-gap: 10px; }
+
+.u-columns-gap-large {
+  column-gap: 40px; }
+
+.u-columns-gap-huge {
+  column-gap: 60px; }

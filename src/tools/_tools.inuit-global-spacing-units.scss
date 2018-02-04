@@ -1,0 +1,17 @@
+///* ========================================================================
+//   #
+//   ======================================================================== */
+
+// 
+
+@if $inuit-columns-activate-inuit-global-spacing-unit == true {
+
+    @if (variable-exists(inuit-global-spacing-unit)) {
+        $inuit-columns-gap-tiny:    $inuit-global-spacing-unit-tiny;
+        $inuit-columns-gap-small:   $inuit-global-spacing-unit-small;
+        $inuit-columns-gap-normal:  $inuit-global-spacing-unit;
+        $inuit-columns-gap-large:   $inuit-global-spacing-unit-large;
+        $inuit-columns-gap-huge:    $inuit-global-spacing-unit-huge;
+    }
+
+}

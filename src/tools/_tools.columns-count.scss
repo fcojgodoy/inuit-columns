@@ -1,0 +1,41 @@
+///* ========================================================================
+//   #COLUMNS-count
+//   ======================================================================== */
+
+// Mixin to generate columns count helper classes.
+
+@mixin inuit-columns-counts($column-count-list: $inuit-columns-count-list, $breakpoint: null) {
+
+    @each $column-count in $column-count-list {
+
+        // Make a rule in the format `.u-columns-2`.
+        $rule: ".u-columns-#{$column-count}#{$breakpoint}";
+
+        #{unquote($rule)} {
+            column-count: $column-count;
+        }
+
+        // FIXME: Lo de abajo es 'hasta tablet', no durante tablet. Arreglar
+        // los comentarios o cambiar el código.
+        // Tablet's columns count
+        @if $inuit-columns-half-of-columns-count-on-tablet == true {
+
+            @include mq($until: tablet) {
+
+                #{unquote($rule)} {
+                    // Ceil or floor Sass round type
+                    @if $inuit-columns-count-decrease-round-type == ceil {
+                        column-count: ceil($column-count / 2);
+                    }
+                    @if $inuit-columns-count-decrease-round-type == floor {
+                        column-count: floor($column-count / 2);
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}

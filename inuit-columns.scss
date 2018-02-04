@@ -1,0 +1,186 @@
+/* ========================================================================
+   #COLUMNS
+   ======================================================================== */
+
+/**
+ * Utility to apply multi-column for the Inuitcss framework.
+ *
+ * It generate helper clasess, e.g.:
+ * .u-columns-2
+ * .u-columns-3
+ * .u-columns-4
+ *
+ * By default, it apply half of columns count on tablets and below. You
+ * can change this below.
+ *
+ * By default, it apply simple columns until mobile. You
+ * can change this below.
+ *
+ * TODO: REVISAR DOC-COMMENTS SOBRE ESPACIADOS
+ *
+ * If we’re using Sass-MQ, automatically generate responsive helpers for each of our
+ * defined breakpoints, and give them a Responsive Suffix, e.g.:
+ *
+ * .u-columns-2@mobile
+ * .u-columns-3@tablet
+ */
+
+
+// A list of columns count that get generated as helper classes.
+
+ $inuit-columns-count-list: (
+        2,
+        3,
+        4,
+        6
+ ) !default;
+
+
+// The utility apply half of columns count on tablets and below. If you desire more
+// control you can set it to false.
+
+$inuit-columns-half-of-columns-count-on-tablet: true;
+
+
+// For the function apply half of columns count on tablets: type of Sass round:
+// ceil (rounds a number up to the next whole number) or
+// floor (rounds a number down to the previous whole number).
+
+$inuit-columns-count-decrease-round-type: ceil;
+
+
+// The utility apply simple column until mobile. If you desire more
+// control you can set it to false.
+
+$inuit-columns-simple-column-until-mobile: true;
+
+
+// Widths of gaps modifiers
+
+$inuit-columns-gap-tiny:   5px !default;
+$inuit-columns-gap-small:  10px !default;
+$inuit-columns-gap-normal: 20px !default;
+$inuit-columns-gap-large:  40px !default;
+$inuit-columns-gap-huge:   60px !default;
+
+// Optionally we can use the Inuitcss global spacing units
+
+$inuit-columns-activate-inuit-global-spacing-unit: false;
+
+///* ========================================================================
+//   #COLUMNS-count
+//   ======================================================================== */
+
+// Mixin to generate columns count helper classes.
+
+@mixin inuit-columns-counts($column-count-list: $inuit-columns-count-list, $breakpoint: null) {
+
+    @each $column-count in $column-count-list {
+
+        // Make a rule in the format `.u-columns-2`.
+        $rule: ".u-columns-#{$column-count}#{$breakpoint}";
+
+        #{unquote($rule)} {
+            column-count: $column-count;
+        }
+
+        // Tablet's columns count
+        @if $inuit-columns-half-of-columns-count-on-tablet == true {
+
+            @include mq($until: tablet) {
+
+                #{unquote($rule)} {
+                    // Ceil or floor Sass round type
+                    @if $inuit-columns-count-decrease-round-type == ceil {
+                        column-count: ceil($column-count / 2);
+                    }
+                    @if $inuit-columns-count-decrease-round-type == floor {
+                        column-count: floor($column-count / 2);
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+///* ========================================================================
+//   #
+//   ======================================================================== */
+
+// 
+
+@if $inuit-columns-activate-inuit-global-spacing-unit == true {
+
+    @if (variable-exists(inuit-global-spacing-unit)) {
+        $inuit-columns-gap-tiny:    $inuit-global-spacing-unit-tiny;
+        $inuit-columns-gap-small:   $inuit-global-spacing-unit-small;
+        $inuit-columns-gap-normal:  $inuit-global-spacing-unit;
+        $inuit-columns-gap-large:   $inuit-global-spacing-unit-large;
+        $inuit-columns-gap-huge:    $inuit-global-spacing-unit-huge;
+    }
+
+}
+
+
+// Apply normal column gap by default.
+
+*[class^="u-columns-"],
+*[class*=" u-columns-"] {
+  column-gap: $inuit-columns-gap-normal;
+}
+
+
+// Apply simple columns on mobile by default.
+
+@if $inuit-columns-simple-column-until-mobile == true {
+    @include mq($until: mobile) {
+
+        *[class^="u-columns-"],
+        *[class*=" u-columns-"] {
+            column-count: 1 !important;
+        }
+
+    }
+}
+
+
+// Include column count helper creator mixin.
+
+@include inuit-columns-counts($inuit-columns-count-list);
+
+
+// Generate responsive helpers for each of our defined breakpoints
+
+@if (variable-exists(mq-breakpoints)) {
+    @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+        @include mq($from: $inuit-bp-name) {
+            @include inuit-columns-counts($inuit-columns-count-list, \@#{$inuit-bp-name});
+        }
+    }
+}
+
+
+// Declare gaps widths helper classes.
+
+.u-columns-gap {
+
+    &-tiny {
+        column-gap: $inuit-columns-gap-tiny;
+    }
+
+    &-small {
+        column-gap: $inuit-columns-gap-small;
+    }
+
+    &-large {
+        column-gap: $inuit-columns-gap-large;
+    }
+
+    &-huge {
+        column-gap: $inuit-columns-gap-huge;
+    }
+}
