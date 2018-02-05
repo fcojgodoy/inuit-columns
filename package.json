@@ -1,8 +1,14 @@
 {
   "name": "inuit-columns",
   "version": "1.0.1",
+  "description": "Simple columns helpers for the inuitcss framework.",
   "main": "inuit-columns.scss",
   "license": "MIT",
+  "repository": {
+    "url": "git@github.com:fcojgodoy/inuit-columns.git",
+    "type": "git"
+  },
+  "author": "Francisco J. Godoy <hola@franciscogodoy.es>",
   "scripts": {
     "test": "npm run lint && mocha test/run.js",
     "lint": "stylelint \"**/*.scss\" --syntax scss",
