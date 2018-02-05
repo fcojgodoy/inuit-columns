@@ -7,13 +7,13 @@ Simple columns helpers for Inuitcss framework.
 With npm
 
 ```shell
-npm i inuit-columns -S
+npm i inuit-columns
 ```
 
-With bower
+With Yarn
 
 ```shell
-bower install inuit-columnss --save
+bower add inuit-columns
 ```
 
 You can download the latest version or checkout all the releases [here](https://github.com/fcojgodoy/inuit-columns/releases).
