@@ -2,6 +2,9 @@
   "name": "inuit-columns",
   "version": "1.0.1",
   "description": "Simple columns helpers for the inuitcss framework.",
+  "homepage": "https://github.com/fcojgodoy/inuit-columns",
+  "keywords": ["inuitcss", "plugin", "sass", "css", "columns"],
+  "bugs": "https://github.com/fcojgodoy/inuit-columns/issues",
   "main": "inuit-columns.scss",
   "license": "MIT",
   "repository": {
