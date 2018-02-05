@@ -9,15 +9,21 @@
 
 // Apply simple columns on mobile by default.
 
-@if $inuit-columns-simple-column-until-mobile == true {
-    @include mq($until: mobile) {
+@if (variable-exists(mq-breakpoints))  {
 
-        *[class^="u-columns-"],
-        *[class*=" u-columns-"] {
-            column-count: 1 !important;
+    @if $inuit-columns-simple-column-until-mobile == true {
+
+        @include mq($until: mobile) {
+
+            *[class^="u-columns-"],
+            *[class*=" u-columns-"] {
+                column-count: 1 !important;
+            }
+
         }
 
     }
+
 }
 
 

@@ -18,18 +18,22 @@
         // FIXME: Lo de abajo es 'hasta tablet', no durante tablet. Arreglar
         // los comentarios o cambiar el código.
         // Tablet's columns count
-        @if $inuit-columns-half-of-columns-count-on-tablet == true {
+        @if (variable-exists(mq-breakpoints)) {
 
-            @include mq($until: tablet) {
+            @if $inuit-columns-half-of-columns-count-on-tablet == true {
 
-                #{unquote($rule)} {
-                    // Ceil or floor Sass round type
-                    @if $inuit-columns-count-decrease-round-type == ceil {
-                        column-count: ceil($column-count / 2);
+                @include mq($until: tablet) {
+
+                    #{unquote($rule)} {
+                        // Ceil or floor Sass round type
+                        @if $inuit-columns-count-decrease-round-type == ceil {
+                            column-count: ceil($column-count / 2);
+                        }
+                        @if $inuit-columns-count-decrease-round-type == floor {
+                            column-count: floor($column-count / 2);
+                        }
                     }
-                    @if $inuit-columns-count-decrease-round-type == floor {
-                        column-count: floor($column-count / 2);
-                    }
+
                 }
 
             }

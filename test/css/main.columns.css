@@ -11,10 +11,10 @@
  * .u-columns-4
  *
  * By default, it apply half of columns count on tablets and below. You
- * can change this below.
+ * can change this below. Depends on Sass-mq.
  *
  * By default, it apply simple columns until mobile. You
- * can change this below.
+ * can change this below. Depends on Sass-mq.
  *
  * TODO: REVISAR DOC-COMMENTS SOBRE ESPACIADOS
  *

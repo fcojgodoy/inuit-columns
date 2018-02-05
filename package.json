@@ -1,6 +1,6 @@
 {
   "name": "inuit-columns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "inuit-columns.scss",
   "license": "MIT",
   "scripts": {
@@ -15,7 +15,8 @@
     "stylelint": "^8.4.0",
     "stylelint-scss": "^2.2.0"
   },
-  "dependencies": {
-    "sass-mq": "^3.3.2"
+  "dependencies": {},
+  "optionalDependencies": {
+    "sass-mq": "^4.0.2"
   }
 }

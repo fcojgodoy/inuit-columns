@@ -11,10 +11,10 @@
  * .u-columns-4
  *
  * By default, it apply half of columns count on tablets and below. You
- * can change this below.
+ * can change this below. Depends on Sass-mq.
  *
  * By default, it apply simple columns until mobile. You
- * can change this below.
+ * can change this below. Depends on Sass-mq.
  *
  * TODO: REVISAR DOC-COMMENTS SOBRE ESPACIADOS
  *
@@ -38,11 +38,12 @@
 
 // The utility apply half of columns count on tablets and below. If you desire more
 // control you can set it to false.
+// Depends on Sass-mq.
 
 $inuit-columns-half-of-columns-count-on-tablet: true;
 
 
-// For the function apply half of columns count on tablets: type of Sass round:
+// For the function 'apply half of columns count on tablets': type of Sass round:
 // ceil (rounds a number up to the next whole number) or
 // floor (rounds a number down to the previous whole number).
 
@@ -51,6 +52,7 @@ $inuit-columns-count-decrease-round-type: ceil;
 
 // The utility apply simple column until mobile. If you desire more
 // control you can set it to false.
+// Depends on Sass-mq.
 
 $inuit-columns-simple-column-until-mobile: true;
 
