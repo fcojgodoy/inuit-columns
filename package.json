@@ -20,7 +20,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
-    "gulp-sass": "^3.2.0",
+    "gulp-sass": "^4.0.2",
     "stylelint": "^9.6.0",
     "stylelint-scss": "^3.3.0"
   },
