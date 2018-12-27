@@ -4,7 +4,7 @@
 
 ## [Unreleased]
 
+## [1.0.2] - 2018-12-27
 
-### Also:
-- Upgrade dev dependencies.
-[[#0002](https://github.com/fcojgodoy/inuit-columns/issues/2)]
+### Minor changes:
+Add one column to default column count
