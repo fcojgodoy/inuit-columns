@@ -58,6 +58,13 @@ body:before {
   *[class*=" u-columns-"] {
     column-count: 1 !important; } }
 
+.u-columns-1 {
+  column-count: 1; }
+
+@media (max-width: 46.24em) {
+  .u-columns-1 {
+    column-count: 1; } }
+
 .u-columns-2 {
   column-count: 2; }
 
@@ -87,6 +94,14 @@ body:before {
     column-count: 3; } }
 
 @media (min-width: 20em) {
+  .u-columns-1\@mobile {
+    column-count: 1; } }
+
+@media (min-width: 20em) and (max-width: 46.24em) {
+  .u-columns-1\@mobile {
+    column-count: 1; } }
+
+@media (min-width: 20em) {
   .u-columns-2\@mobile {
     column-count: 2; } }
 
@@ -117,6 +132,14 @@ body:before {
 @media (min-width: 20em) and (max-width: 46.24em) {
   .u-columns-6\@mobile {
     column-count: 3; } }
+
+@media (min-width: 46.25em) {
+  .u-columns-1\@tablet {
+    column-count: 1; } }
+
+@media (min-width: 46.25em) and (max-width: 46.24em) {
+  .u-columns-1\@tablet {
+    column-count: 1; } }
 
 @media (min-width: 46.25em) {
   .u-columns-2\@tablet {
@@ -151,6 +174,14 @@ body:before {
     column-count: 3; } }
 
 @media (min-width: 61.25em) {
+  .u-columns-1\@desktop {
+    column-count: 1; } }
+
+@media (min-width: 61.25em) and (max-width: 46.24em) {
+  .u-columns-1\@desktop {
+    column-count: 1; } }
+
+@media (min-width: 61.25em) {
   .u-columns-2\@desktop {
     column-count: 2; } }
 
@@ -181,6 +212,14 @@ body:before {
 @media (min-width: 61.25em) and (max-width: 46.24em) {
   .u-columns-6\@desktop {
     column-count: 3; } }
+
+@media (min-width: 81.25em) {
+  .u-columns-1\@wide {
+    column-count: 1; } }
+
+@media (min-width: 81.25em) and (max-width: 46.24em) {
+  .u-columns-1\@wide {
+    column-count: 1; } }
 
 @media (min-width: 81.25em) {
   .u-columns-2\@wide {
